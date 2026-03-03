@@ -28,7 +28,7 @@
                     <!-- profile -->
                     <a href="{{ url_for('main.profile') }}">Profile</a>
 
-                    {% if current_user.role=='admin' %}
+                    {% if current_user.u_role=='admin' %}
                         <a href="{{ url_for('main.admin') }}">Admin</a>
                     {% endif %}
 
@@ -117,7 +117,7 @@
 
         <!-- Application Success -->
         <div id="successModal" class="modal">
-            <div class="modal-content">
+            <div class="modal-cont">
                 <span class="close" onclick="closeModal('successModal')">&times;</span>
                 <h2>Application Submitted</h2>
                 <p>You are one step closer to your job!</p>
