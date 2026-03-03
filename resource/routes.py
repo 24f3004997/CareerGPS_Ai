@@ -124,7 +124,7 @@ def admin():
     
     # If admin give access to DB
     users = User.query.all()
-    return redirect(url_for("admin.html", users=users))
+    return render_template("admin.html", users=users)
 
 #File-Upload route
 ALLOWED_TYPES = {'pdf', 'docx'}
