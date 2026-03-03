@@ -49,4 +49,4 @@ class User(db.Model, UserMixin):
         return check_pass(self.password_hashed, pass_h)
     
     def is_admin(self) -> bool:
-        return self.role == "admin"
+        return self.u_role == "admin"
