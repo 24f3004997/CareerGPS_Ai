@@ -1,49 +1,71 @@
 /* Main Page Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #f1f5f9;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    width: 95%;
-    max-width: 1200px;
-    margin: 40px auto;
-    background: white;
+    width: 90%;
+    max-width: 1100px;
+    margin: 60px auto;
+    /* background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); */
 }
 
-h1, h2 {
-    margin-top: 0;
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .button {
-    display: block;
-    text-align: center;
-    padding: 12px;
-    margin: 10px 0;
-    background: #2563eb;
+    display: inline-block;
+    /* text-align: center; */
+    padding: 10px 18px;
+    /* margin: 10px 0; */
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
     color: white;
-    text-decoration: none;
-    border-radius: 6px;
+    /* text-decoration: none; */
+    border-radius: 8px;
     border: none;
-    cursor: pointer;
-    box-shadow: 3px 3px darkgrey;
+    /* cursor: pointer; */
+    /* box-shadow: 3px 3px darkgrey; */
+    font-weight: 500;
+    transition: 0.2s ease;
 }
 
 .button:hover {
-    background: #1e40af;
+    transform: translateY(-2px);
+    /* background: #1e40af; */
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
 }
 
 .card {
-    padding: 10px;
-    margin: 10px 0;
+    padding: 24px;
+    margin: 20px 0;
     background: #f1f5f9;
-    border-radius: 6px;
-    box-shadow: 3px 3px darkolivegreen;
+    border-radius: 14px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.06);
+    transition: 0.2s ease;
+}
+
+.card:hover {
+    transform: translate(-3px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
 .progress {
@@ -60,22 +82,22 @@ h1, h2 {
 
 /* Top Navigation Ribbon Bar Styling */
 #top-nav-bar {
-    background-color: #0f172a;
-    padding: 10px 20px;
+    background: linear-gradient(90deg, #0f172a, #1e293b);
+    padding: 14px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 #top-nav-bar a {
-    color: white;
-    text-decoration: none;
-    margin-left: 15px;
-    font-size: 14px;
+    color: #e2e8f0;
+    /* text-decoration: none; */
+    margin-left: 20px;
+    font-weight: 500;
 }
 
 #top-nav-bar a:hover {
-    text-decoration: underline;
+    color: white;
 }
 
 #top-nav-bar .logo {
@@ -140,7 +162,7 @@ h1, h2 {
 .modal {
     display: none;
     position: fixed;
-    z-index: 2000;
+    z-index: 3000;
     inset: 0;
     background: rgba(0,0,0,0.6);
 
@@ -151,12 +173,12 @@ h1, h2 {
 .modal-cont {
     background: white;
     width: 90%;
-    max-width: 400px;
+    max-width: 420px;
     padding: 25px;
-    border-radius: 10px;
-    position: relative;
-    animation: fadeIn 0.25s ease-in-out;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    border-radius: 14px;
+    /* position: relative;
+    animation: fadeIn 0.25s ease-in-out; */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
 
 .modal-cont h2 {
@@ -280,4 +302,39 @@ h1, h2 {
 .user-badge {
     background-color: #94a3b8;
     color: white;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+    font-size: 14px;
+}
+
+.stat-large {
+    font-size: 40px;
+    font-weight: 700;
+    color: #2563eb;
+    margin: 10px 0;
+}
+
+.mini-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.mini-stats div {
+    text-align: center;
+}
+
+.mini-stats strong {
+    display: block;
+    font-size: 18px;
 }
