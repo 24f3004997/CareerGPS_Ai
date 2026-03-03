@@ -21,9 +21,9 @@
     <a href="#" class="button" onclick="openModal('uploadModal')">
         Upload Resume
     </a>
-    <a href="{{ url_for('result') }}" class="button">Skill Gap Analysis</a>
-    <a href="{{ url_for('roadmap') }}" class="button">Career Roadmap</a>
-    <a href="{{ url_for('jobs') }}" class="button">Job Recommendations</a>
+    <a href="{{ url_for('main.result') }}" class="button">Skill Gap Analysis</a>
+    <a href="{{ url_for('main.roadmap') }}" class="button">Career Roadmap</a>
+    <a href="{{ url_for('main.jobs') }}" class="button">Job Recommendations</a>
 </div>
 
 <!-- Skill Overview -->
@@ -45,7 +45,7 @@
     {% for job in job_list %}
         <div class="job-row">
             {{ job.title }} | {{ job.location }}
-            <a href="{{ url_for('jobs') }}" class="small-button">Apply</a>
+            <a href="{{ url_for('main.jobs') }}" class="small-button">Apply</a>
         </div>
     {% endfor %}
 </div>
@@ -54,7 +54,7 @@
 <div class="card next-step">
     Recommended Next Step:
     {{ next_step }}
-    <a href="{{ url_for('roadmap') }}" class="small-button">Start Now</a>
+    <a href="{{ url_for('main.roadmap') }}" class="small-button">Start Now</a>
 </div>
 
 {% endblock %}
