@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="hero-section">
+    <div class="hero-content">
+        <h1>Turn Skill Gap Into Job Fit</h1>
+        <p>
+            CareerGPS AI helps you identify skill gaps,
+            build a personalized roadmap,
+            and connect to real job opportunities.
+        </p>
+
+        {% if not current_user.is_authenticated %}
+            <div class="hero-buttons">
+                <button class="button primary-btn"
+                        onclick="openModal('registerModal')">
+                    Get Started
+                </button>
+
+                <button class="button secondary-btn"
+                        onclick="openModal('loginModal')">
+                    Log In
+                </button>
+            </div>
+        {% else %}
+            <div class="hero-buttons">
+                <a href="{{ url_for('main.dashboard') }}"
+                   class="button primary-btn">
+                    Go to Dashboard
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="features-section">
+    <div class="feature-card">
+        <h3>AI Skill Gap Analysis</h3>
+        <p>Detect missing skills compared to real job market demand.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Personalized Roadmap</h3>
+        <p>Step-by-step learning path tailored to your goals.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Job Matching Engine</h3>
+        <p>Get matched to roles based on your readiness score.</p>
+    </div>
+</div>
+
+{% endblock %}

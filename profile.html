@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Profile</h2>
+
+<div class="card">
+    <h3>Account Information</h3>
+
+    <p><strong>Name:</strong> {{ current_user.name }}</p>
+    <p><strong>Email:</strong> {{ current_user.email }}</p>
+    <p>
+        <strong>Role:</strong> 
+        {% if current_user.role == "admin" %}
+            <span class="badge admin-badge">Admin</span>
+        {% else %}
+            <span class="badge user-badge">User</span>
+        {% endif %}
+    </p>
+</div>
+
+<div class="card">
+    <h3>Career Stats</h3>
+    <p>Profile Score: 78%</p>
+    <p>Applications Submitted: 3</p>
+    <p>Skill Readiness Level: Intermediate</p>
+</div>
+
+{% endblock %}
