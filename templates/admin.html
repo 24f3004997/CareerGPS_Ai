@@ -18,11 +18,11 @@
         <tbody>
             {% for user in users %}
             <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.name }}</td>
-                <td>{{ user.email }}</td>
+                <td>{{ user.u_id }}</td>
+                <td>{{ user.u_name }}</td>
+                <td>{{ user.u_email }}</td>
                 <td>
-                    {% if user.role == "admin" %}
+                    {% if user.u_role == "admin" %}
                         <span class="badge admin-badge">Admin</span>
                     {% else %}
                         <span class="badge user-badge">User</span>
