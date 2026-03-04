@@ -12,39 +12,39 @@ function applyJob() {
     openModal('successModal');
 }
 </script>
+<div class="container">
+    <h2>Recommended Jobs</h2>
 
-<h2>Recommended Jobs</h2>
+    <div class="card">
+        <strong>Data Analyst - Mumbai</strong><br>
+        85% Match
+        <button class="button" onclick="toggleDetails('job1')">
+            View Details
+        </button>
 
-<div class="card">
-    <strong>Data Analyst - Mumbai</strong><br>
-    85% Match
-    <button class="button" onclick="toggleDetails('job1')">
-        View Details
-    </button>
+        <div id="job1" style="display:none; margin-top:10px;">
+            <hr>
+            <p><strong>Company:</strong> ABC Pvt Ltd</p>
+            <p><strong>Required Skills:</strong> SQL, Python, Power BI</p>
+            <p><strong>Salary:</strong> ₹6–9 LPA</p>
+            <button class="button" onclick="applyJob()">Apply Now</button>
+        </div>
+    </div>
 
-    <div id="job1" style="display:none; margin-top:10px;">
-        <hr>
-        <p><strong>Company:</strong> ABC Pvt Ltd</p>
-        <p><strong>Required Skills:</strong> SQL, Python, Power BI</p>
-        <p><strong>Salary:</strong> ₹6–9 LPA</p>
-        <button class="button" onclick="applyJob()">Apply Now</button>
+    <div class="card">
+        <strong>Business Analyst - Pune</strong><br>
+        78% Match
+        <button class="button" onclick="toggleDetails('job2')">
+            View Details
+        </button>
+
+        <div id="job2" style="display:none; margin-top:10px;">
+            <hr>
+            <p><strong>Company:</strong> XYZ Solutions</p>
+            <p><strong>Required Skills:</strong> Excel, SQL, Communication</p>
+            <p><strong>Salary:</strong> ₹5–8 LPA</p>
+            <button class="button" onclick="applyJob()">Apply Now</button>
+        </div>
     </div>
 </div>
-
-<div class="card">
-    <strong>Business Analyst - Pune</strong><br>
-    78% Match
-    <button class="button" onclick="toggleDetails('job2')">
-        View Details
-    </button>
-
-    <div id="job2" style="display:none; margin-top:10px;">
-        <hr>
-        <p><strong>Company:</strong> XYZ Solutions</p>
-        <p><strong>Required Skills:</strong> Excel, SQL, Communication</p>
-        <p><strong>Salary:</strong> ₹5–8 LPA</p>
-        <button class="button" onclick="applyJob()">Apply Now</button>
-    </div>
-</div>
-
 {% endblock %}

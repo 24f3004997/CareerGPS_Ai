@@ -1,60 +1,60 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container">
+    <h2>Welcome, {{ user_name }}</h2>
 
-<h2>Welcome, {{ user_name }}</h2>
-
-<!-- Stats -->
-<div class="stats-row">
-    <div class="stat-box">
-        <strong>Profile Score</strong><br>
-        {{ profile_score }}%
-    </div>
-    <div class="stat-box">
-        <strong>Jobs Matched</strong><br>
-        {{ jobs_matched }}
-    </div>
-</div>
-
-<!-- Action Buttons -->
-<div class="action-grid">
-    <a href="#" class="button" onclick="openModal('uploadModal')">
-        Upload Resume
-    </a>
-    <a href="{{ url_for('main.result') }}" class="button">Skill Gap Analysis</a>
-    <a href="{{ url_for('main.roadmap') }}" class="button">Career Roadmap</a>
-    <a href="{{ url_for('main.jobs') }}" class="button">Job Recommendations</a>
-</div>
-
-<!-- Skill Overview -->
-<div class="card">
-    <h3>Skill Overview</h3>
-
-    {% for skill in skills %}
-        <p>{{ skill.name }}</p>
-        <div class="progress">
-            <div class="progress-bar" style="width: {{ skill.percent }}%"></div>
+    <!-- Stats -->
+    <div class="stats-row">
+        <div class="stat-box">
+            <strong>Profile Score</strong><br>
+            {{ profile_score }}%
         </div>
-    {% endfor %}
-</div>
-
-<!-- Job Matches -->
-<div class="card">
-    <h3>Job Matches</h3>
-
-    {% for job in job_list %}
-        <div class="job-row">
-            {{ job.title }} | {{ job.location }}
-            <a href="{{ url_for('main.jobs') }}" class="small-button">Apply</a>
+        <div class="stat-box">
+            <strong>Jobs Matched</strong><br>
+            {{ jobs_matched }}
         </div>
-    {% endfor %}
-</div>
+    </div>
 
-<!-- Next Step -->
-<div class="card next-step">
-    Recommended Next Step:
-    {{ next_step }}
-    <a href="{{ url_for('main.roadmap') }}" class="small-button">Start Now</a>
-</div>
+    <!-- Action Buttons -->
+    <div class="action-grid">
+        <a href="#" class="button" onclick="openModal('uploadModal')">
+            Upload Resume
+        </a>
+        <a href="{{ url_for('main.result') }}" class="button">Skill Gap Analysis</a>
+        <a href="{{ url_for('main.roadmap') }}" class="button">Career Roadmap</a>
+        <a href="{{ url_for('main.jobs') }}" class="button">Job Recommendations</a>
+    </div>
 
+    <!-- Skill Overview -->
+    <div class="card">
+        <h3>Skill Overview</h3>
+
+        {% for skill in skills %}
+            <p>{{ skill.name }}</p>
+            <div class="progress">
+                <div class="progress-bar" style="width: {{ skill.percent }}%"></div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Job Matches -->
+    <div class="card">
+        <h3>Job Matches</h3>
+
+        {% for job in job_list %}
+            <div class="job-row">
+                {{ job.title }} | {{ job.location }}
+                <a href="{{ url_for('main.jobs') }}" class="small-button">Apply</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Next Step -->
+    <div class="card next-step">
+        Recommended Next Step:
+        {{ next_step }}
+        <a href="{{ url_for('main.roadmap') }}" class="small-button">Start Now</a>
+    </div>
+</div> 
 {% endblock %}

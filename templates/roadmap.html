@@ -1,23 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="container">
+    <h2>Career Roadmap</h2>
 
-<h2>Career Roadmap</h2>
+    <div class="card">
+        <h3>Month 1</h3>
+        SQL Basics
+    </div>
 
-<div class="card">
-    <h3>Month 1</h3>
-    SQL Basics
+    <div class="card">
+        <h3>Month 2</h3>
+        Power BI Projects
+    </div>
+
+    <div class="card">
+        <h3>Month 3</h3>
+        Advanced SQL
+    </div>
+
+    <a href="{{ url_for('main.jobs') }}" class="button">View Jobs</a>
 </div>
-
-<div class="card">
-    <h3>Month 2</h3>
-    Power BI Projects
-</div>
-
-<div class="card">
-    <h3>Month 3</h3>
-    Advanced SQL
-</div>
-
-<a href="{{ url_for('main.jobs') }}" class="button">View Jobs</a>
-
 {% endblock %}

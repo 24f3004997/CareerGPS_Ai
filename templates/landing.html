@@ -2,53 +2,118 @@
 
 {% block content %}
 
-<div class="hero-section">
-    <div class="hero-content">
-        <h1>Turn Skill Gap Into Job Fit</h1>
-        <p>
-            CareerGPS AI helps you identify skill gaps,
-            build a personalized roadmap,
-            and connect to real job opportunities.
-        </p>
+<!-- Hero -->
+<section class="hero">
+    <div class="section-inner">
 
-        {% if not current_user.is_authenticated %}
-            <div class="hero-buttons">
-                <button class="button primary-btn"
-                        onclick="openModal('registerModal')">
-                    Get Started
-                </button>
+        <div class="hero-content">
 
-                <button class="button secondary-btn"
-                        onclick="openModal('loginModal')">
-                    Log In
-                </button>
-            </div>
-        {% else %}
+            <h1>Your Career, <br><span>GPS-Guided</span></h1>
+
+            <p>
+                Identify your skill gaps, 
+                have access to personalized growth roadmaps, and
+                connect with real job opportunities.
+                <br>
+                All Powered by AI.
+                From Learning to Employment, we mark every step.
+            </p>
+
             <div class="hero-buttons">
-                <a href="{{ url_for('main.dashboard') }}"
-                   class="button primary-btn">
-                    Go to Dashboard
+                <a href="#" onclick="openModal('registerModal')" class="button hero-primary">
+                    Get Started For Free
                 </a>
+
+                <!-- <a href="#" onclick="openModal('loginModal')" class="button hero-secondary">
+                    Try Demo
+                </a> -->
             </div>
-        {% endif %}
-    </div>
-</div>
 
-<div class="features-section">
-    <div class="feature-card">
-        <h3>AI Skill Gap Analysis</h3>
-        <p>Detect missing skills compared to real job market demand.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Features -->
+<section id="features" class="features">
+    <div class="section-inner">
+        <h2>Core Intelligence Modules</h2>
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+                <h3>AI Skill Gap Analyzer</h3>
+                <p>Detect missing skills based on real industry requirements.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Learning Roadmap</h3>
+                <p>Personalized step-by-step career learning plan.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Live Job Demand</h3>
+                <p>Analyze city-wise and industry-wise job demand.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Resume + ATS Analyzer</h3>
+                <p>Improve resume compatibility with recruiter systems.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>AI Interview Coach</h3>
+                <p>Practice HR and technical interviews with AI feedback.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>CareerGPS Engine</h3>
+                <p>Navigate learning → job → career growth seamlessly.</p>
+            </div>
+
+        </div>
     </div>
 
-    <div class="feature-card">
-        <h3>Personalized Roadmap</h3>
-        <p>Step-by-step learning path tailored to your goals.</p>
-    </div>
+</section>
 
-    <div class="feature-card">
-        <h3>Job Matching Engine</h3>
-        <p>Get matched to roles based on your readiness score.</p>
+
+<!-- Statistics -->
+<section id="about" class="stats">
+    <div class="section-inner">
+
+        <div class="stat">
+            <h3>95%</h3>
+            <p>Skill Match Accuracy</p>
+        </div>
+
+        <div class="stat">
+            <h3>3-6 Months</h3>
+            <p>Roadmap Duration</p>
+        </div>
+
+        <div class="stat">
+            <h3>500+</h3>
+            <p>Jobs Mapped</p>
+        </div>
+
+        <div class="stat">
+            <h3>50+</h3>
+            <p>Cities Covered</p>
+        </div>
     </div>
-</div>
+</section>
+
+
+<!-- Cta -->
+<section id="get-started" class="cta">
+    <div class="section-inner">
+
+        <h2>Bridge the Gap Between Learning & Employment</h2>
+
+        <a href="#" onclick="openModal('registerModal')" class="button hero-primary">
+            Start Your Career Journey
+        </a>
+    </div>
+</section>
 
 {% endblock %}

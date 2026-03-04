@@ -21,6 +21,13 @@
                 <a href="{{ url_for('main.landing') }}">CareerGPS AI</a>
             </div>
             <div class="nav-bar-links">
+                <!-- Jump to features -->
+                 <a href="#features">Features</a>
+                <!-- Jump to about -->
+                 <a href="#about">About Us</a>
+                <!-- Jump to get started -->
+                 <a href="#get-started">Get Started</a>
+                <!-- jump to contact information -->
                 <!-- if auth->pass -->
                  {% if current_user.is_authenticated %}
                     <!-- dashboard -->
@@ -126,10 +133,8 @@
         </div>
 
         <!-- main content -->
-        <div class="container">
-            {% block content %}
-            {% endblock %}
-        </div>
+        {% block content %}
+        {% endblock %}
         
         <!-- Java Script -->
         <script>

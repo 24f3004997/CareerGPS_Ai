@@ -1,4 +1,8 @@
 /* Main Page Styling */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', Arial, sans-serif;
     background-color: #f1f5f9;
@@ -87,6 +91,9 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
 }
 
 #top-nav-bar a {
@@ -240,7 +247,8 @@ h3 {
 
 .hero-content p {
     font-size: 18px;
-    color: #475569;
+    /* color: #475569; */
+    color: #94a3b8 !important;
     max-width: 600px;
     margin: 0 auto 30px auto;
 }
@@ -264,6 +272,11 @@ h3 {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     margin-top: 60px;
+}
+
+.section-inner {
+    max-width: 1100px;
+    margin: auto;
 }
 
 .feature-card {
@@ -338,3 +351,134 @@ h3 {
     display: block;
     font-size: 18px;
 }
+
+/* Hero */
+
+.hero {
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color: white;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.hero-content span {
+    color: #22c55e;
+}
+
+.hero-content p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: auto;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.hero-primary {
+    background: #22c55e;
+    margin-right: 10px;
+}
+
+.hero-secondary {
+    background: transparent;
+    border: 1px solid white;
+}
+
+
+/* features */
+
+.features {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.features h2 {
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.feature-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+}
+
+
+/* statistics */
+
+.stats {
+    background: #0f172a;
+    color: white;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 32px;
+    color: #22c55e;
+}
+
+.stat p {
+    opacity: 0.8;
+}
+
+
+/* cta */
+
+.cta {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.cta h2 {
+    margin-bottom: 25px;
+}
+
+
+/* style.css | http://127.0.0.1:5000/static/style.css */
+/*
+.hero {
+  /* text-align: center; *//*
+  text-align: left;
+  margin-block: ;
+}
+
+.hero-content p {
+  /* color: #475569; *//*
+  color: #94A3B8;
+}
+
+/* Inline | http://127.0.0.1:5000/#get-started *//*
+
+.hero-content h1 {
+  margin-left: 5%;
+}
+
+.hero-buttons {
+  margin-left: 5%;
+}
+
+.hero-content p {
+  text-align: left;
+  margin-left: 5%;
+}
+*/
