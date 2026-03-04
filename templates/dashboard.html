@@ -1,60 +1,189 @@
 {% extends "base.html" %}
-
-{% block content %}
 <div class="container">
-    <h2>Welcome, {{ user_name }}</h2>
+{% block page_layout %}
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-logo">CareerGPS</div>
+        <nav class="sidebar-menu">
+            <a href="{{ url_for('main.dashboard') }}" 
+            class="{% if request.endpoint == 'main.dashboard' %}active{% endif %}">
+                <i class="bi bi-speedometer2"></i>
+                Overview
+            </a>
 
-    <!-- Stats -->
-    <div class="stats-row">
-        <div class="stat-box">
-            <strong>Profile Score</strong><br>
-            {{ profile_score }}%
+            <a href="{{ url_for('main.result') }}"
+            class="{% if request.endpoint == 'main.result' %}active{% endif %}">
+                <i class="bi bi-bar-chart-line"></i>
+                Skill Analyzer
+            </a>
+
+            <a href="{{ url_for('main.roadmap') }}"
+            class="{% if request.endpoint == 'main.roadmap' %}active{% endif %}">
+                <i class="bi bi-map"></i>
+                Learning Roadmap
+            </a>
+
+            <a href="{{ url_for('main.jobs') }}"
+            class="{% if request.endpoint == 'main.jobs' %}active{% endif %}">
+                <i class="bi bi-briefcase"></i>
+                Job Demand
+            </a>
+
+            <a href="#">
+            <!-- class="{% if request.endpoint == 'main.analyse' %}active{% endif %}"> -->
+                <i class="bi bi-search"></i>
+                Resume Analyzer
+            </a>
+
+            <a href="#">
+            <!-- class="{% if request.endpoint == 'main.coach' %}active{% endif %}"> -->
+                <i class="bi bi-megaphone"></i>
+                Interview Coach
+            </a>
+
+            <a href="{{ url_for('main.landing') }}"
+            class="{% if request.endpoint == 'main.landing' %}active{% endif %}">
+                <i class="bi bi-compass"></i>
+                Career GPS
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="{{ url_for('main.landing') }}">← Back to Home</a>
         </div>
-        <div class="stat-box">
-            <strong>Jobs Matched</strong><br>
-            {{ jobs_matched }}
+    </aside>
+
+    <main class="app-content">
+        <h3 class="mb-1">Welcome back, {{ current_user.u_name }} 👋</h3>
+        <p class="text-muted mb-4">Here's your career intelligence overview.</p>
+
+        <div class="row g-4">
+            <!-- Skill Gap Analysis -->
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="mb-3">Skill Gap Analysis</h5>
+                        <p class="text-muted mb-4">
+                            Target role: Data Analyst
+                        </p>
+                        {% for skill in skills %}
+                            <div class="d-flex justify-content-between">
+                                <span>{{ skill.name }}</span>
+                                <span class="text-muted">{{ skill.percent }}%</span>
+                            </div>
+
+                            <div class="skill-bar mb-3">
+                                <div class="skill-bar-fill"
+                                data-width="{{ skill.percent }}%">
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Readiness -->
+            <div class="col-lg-4">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <h5 class="mb-3">Job Readiness Score</h5>
+                        <div class="readiness-chart" >
+                            <svg width="140" height="140">
+                                <circle
+                                    cx="70"
+                                    cy="70"
+                                    r="60"
+                                    stroke="#e5e7eb"
+                                    stroke-width="12"
+                                    fill="none"
+                                />
+
+                                <circle
+                                    class="progress-ring"
+                                    cx="70"
+                                    cy="70"
+                                    r="60"
+                                    stroke="#22c55e"
+                                    stroke-width="12"
+                                    fill="none"
+                                    stroke-dasharray="377"
+                                    stroke-dashoffset="{{ 377 - (profile_score/100)*377 }}"
+                                />
+                            </svg>
+
+                            <div class="chart-text">{{ profile_score }}%</div>
+                        </div>
+                        <p class="text-muted">Ready</p>
+                        <p class="text-muted mt-3">
+                            You are {{ profile_score }}% job-ready for Data Analyst roles.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- Action Buttons -->
-    <div class="action-grid">
-        <a href="#" class="button" onclick="openModal('uploadModal')">
-            Upload Resume
-        </a>
-        <a href="{{ url_for('main.result') }}" class="button">Skill Gap Analysis</a>
-        <a href="{{ url_for('main.roadmap') }}" class="button">Career Roadmap</a>
-        <a href="{{ url_for('main.jobs') }}" class="button">Job Recommendations</a>
-    </div>
-
-    <!-- Skill Overview -->
-    <div class="card">
-        <h3>Skill Overview</h3>
-
-        {% for skill in skills %}
-            <p>{{ skill.name }}</p>
-            <div class="progress">
-                <div class="progress-bar" style="width: {{ skill.percent }}%"></div>
+        <div class="row g-4 mt-1">
+            <!-- Learning Roadmap -->
+            <div class="col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="mb-3">Your Learning Roadmap</h5>
+                        <p class="text-muted mb-4">6-month path to Data Analyst</p>
+                        <ul class="timeline">
+                            <li class="done">
+                                <strong>Python Fundamentals</strong>
+                                <small>Week 1-3</small>
+                            </li>
+                            <li class="done">
+                                <strong>SQL & Database Basics</strong>
+                                <small>Week 4-6</small>
+                            </li>
+                            <li class="active">
+                                <strong>Data Analysis with Pandas</strong>
+                                <small>Week 7-10</small>
+                            </li>
+                            <li>
+                                <strong>Statistics & Probability</strong>
+                                <small>Week 11-14</small>
+                            </li>
+                            <li>
+                                <strong>Visualization (Power BI / Tableau)</strong>
+                                <small>Week 15-18</small>
+                            </li>
+                            <li>
+                                <strong>Portfolio Project</strong>
+                                <small>Week 19-24</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        {% endfor %}
-    </div>
 
-    <!-- Job Matches -->
-    <div class="card">
-        <h3>Job Matches</h3>
+            <!-- Trending Jobs -->
+            <div class="col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="mb-3">Trending Jobs For You</h5>
+                        {% for job in jobs %}
+                            <div class="job-item">
+                                <div>
+                                    <strong>{{ job.title }}</strong>
+                                    <br>
+                                    <small class="text-muted">{{ job.location }}</small>
+                                </div>
 
-        {% for job in job_list %}
-            <div class="job-row">
-                {{ job.title }} | {{ job.location }}
-                <a href="{{ url_for('main.jobs') }}" class="small-button">Apply</a>
+                                <div class="text-end">
+                                    <span class="badge bg-success mb-1">High</span>
+                                    <br>
+                                    <small class="text-muted">{{ job.package }}</small>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
-        {% endfor %}
-    </div>
-
-    <!-- Next Step -->
-    <div class="card next-step">
-        Recommended Next Step:
-        {{ next_step }}
-        <a href="{{ url_for('main.roadmap') }}" class="small-button">Start Now</a>
-    </div>
-</div> 
+        </div>
+    </main>
+</div>
 {% endblock %}
+</div>

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-4">
+    <h2 class="mb-3">Skill Gap Analysis</h2>
+    <p class="text-muted">Target Role: <strong>Data Analyst</strong></p>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="mb-3">Job Readiness</h5>
+                    <div class="readiness-chart" style="--percent:62%"><span>62%</span></div>
+                    <p class="mt-2 text-muted">Ready for entry-level roles</p>
+                </div>
+            </div>
+        </div>
+            
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="mb-3">Skills You Have</h5>
+                    <div class="skill-row">
+                        <div class="skill-label">
+                            <span>Python</span>
+                            <span>80%</span>
+                        </div>
+
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="80%"></div>
+                        </div>
+                    </div>
+                        
+                    <div class="skill-row">
+                        <div class="skill-label">
+                            <span>Excel</span>
+                            <span>90%</span>
+                        </div>
+    
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="mb-3">Skill Gaps</h5>
+                    <div class="mb-2">
+                        <span class="badge bg-danger">Critical</span>SQL
+                    </div>
+                    <div>
+                        <span class="badge bg-warning text-dark">Medium</span>
+                        Power BI
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mt-4">
+        <div class="card-body">
+            <h4 class="mb-3">3-Month Learning Roadmap</h4>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Month 1 &dash; SQL Fundamentals</li>
+                <li class="list-group-item">Month 2 &dash; Power BI Dashboard Projects</li>
+                <li class="list-group-item">Month 3 &dash; Advanced SQL Queries</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="{{ url_for('main.jobs') }}" class="btn btn-success">Explore Recommended Jobs</a>
+    </div>
+</div>
+{% endblock %}

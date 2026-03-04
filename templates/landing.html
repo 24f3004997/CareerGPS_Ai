@@ -1,119 +1,180 @@
 {% extends "base.html" %}
-
 {% block content %}
-
-<!-- Hero -->
+<!-- HERO -->
 <section class="hero">
-    <div class="section-inner">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="hero-content">
+                    <h1>
+                        Your Career,
+                        <br>
+                        <span>GPS-Guided</span>
+                    </h1>
+                    <p>
+                        Identify your skill gaps,
+                        have access to personalized growth roadmaps,
+                        and connect with real job opportunities.
+                        <br><br>
+                        All Powered by AI.
+                        From Learning to Employment,
+                        we mark every step.
+                    </p>
 
-        <div class="hero-content">
+                    <div class="hero-buttons">
+                        <a href="#"
+                        onclick="openModal('registerModal')"
+                        class="btn btn-success btn-lg">
+                            Get Started For Free
+                        </a>
+                    </div>
+                </div>
 
-            <h1>Your Career, <br><span>GPS-Guided</span></h1>
-
-            <p>
-                Identify your skill gaps, 
-                have access to personalized growth roadmaps, and
-                connect with real job opportunities.
-                <br>
-                All Powered by AI.
-                From Learning to Employment, we mark every step.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#" onclick="openModal('registerModal')" class="button hero-primary">
-                    Get Started For Free
-                </a>
-
-                <!-- <a href="#" onclick="openModal('loginModal')" class="button hero-secondary">
-                    Try Demo
-                </a> -->
+                <div class="hero-features">
+                    <span>✔ Real-Time Job Mapping</span>
+                    <span>✔ AI Skill Analysis</span>
+                    <span>✔ Personalized Roadmaps</span>
+                </div>
             </div>
-
         </div>
     </div>
 </section>
 
 
-<!-- Features -->
+
+<!-- FEATURES -->
 <section id="features" class="features">
-    <div class="section-inner">
-        <h2>Core Intelligence Modules</h2>
-
-        <div class="features-grid">
-
-            <div class="feature-card">
-                <h3>AI Skill Gap Analyzer</h3>
-                <p>Detect missing skills based on real industry requirements.</p>
+    <div class="container">
+        <h2 class="text-center mb-5">
+            Core Intelligence Modules
+        </h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <h5>AI Skill Gap Analyzer</h5>
+                        <p>
+                            Detect missing skills based on
+                            real industry requirements.
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <div class="feature-card">
-                <h3>Learning Roadmap</h3>
-                <p>Personalized step-by-step career learning plan.</p>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <h5>Learning Roadmap</h5>
+                        <p>
+                            Personalized step-by-step
+                            career learning plan.
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <div class="feature-card">
-                <h3>Live Job Demand</h3>
-                <p>Analyze city-wise and industry-wise job demand.</p>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <h5>Live Job Demand</h5>
+                        <p>
+                            Analyze city-wise and
+                            industry-wise job demand.
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <div class="feature-card">
-                <h3>Resume + ATS Analyzer</h3>
-                <p>Improve resume compatibility with recruiter systems.</p>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <h5>Resume + ATS Analyzer</h5>
+                        <p>
+                            Improve resume compatibility 
+                            with recruiter systems.
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <div class="feature-card">
-                <h3>AI Interview Coach</h3>
-                <p>Practice HR and technical interviews with AI feedback.</p>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <h5>AI Interview Coach</h5>
+                        <p>
+                            Practice HR and technical interviews 
+                            with AI feedback.
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <div class="feature-card">
-                <h3>CareerGPS Engine</h3>
-                <p>Navigate learning → job → career growth seamlessly.</p>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body">
+                        <h5>CareerGPS Engine</h5>
+                        <p>
+                            Navigate learning → job 
+                            → career growth seamlessly.
+                        </p>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
-
 </section>
-
 
 <!-- Statistics -->
 <section id="about" class="stats">
-    <div class="section-inner">
+<div class="container">
+<div class="row text-center">
+<div class="col-md-3">
+<h3>95%</h3>
+<p>Skill Match Accuracy</p>
+</div>
 
-        <div class="stat">
-            <h3>95%</h3>
-            <p>Skill Match Accuracy</p>
-        </div>
+<div class="col-md-3">
+<h3>3-6 Months</h3>
+<p>Learning Roadmap</p>
+</div>
 
-        <div class="stat">
-            <h3>3-6 Months</h3>
-            <p>Roadmap Duration</p>
-        </div>
+<div class="col-md-3">
+<h3>500+</h3>
+<p>Jobs Mapped</p>
+</div>
 
-        <div class="stat">
-            <h3>500+</h3>
-            <p>Jobs Mapped</p>
-        </div>
-
-        <div class="stat">
-            <h3>50+</h3>
-            <p>Cities Covered</p>
+<div class="col-md-3">
+<h3>50+</h3>
+<p>Cities Covered</p>
+</div>
+</div>
+</div>
+</section>
+<!-- TRUSTED BY -->
+<section id="trust" class="trusted">
+    <div class="container text-center">
+        <h4 class="mb-4">
+            Trusted by job seekers worldwide
+        </h4>
+        <div class="logos">
+            <span>Company</span>
+            <span>Company</span>
+            <span>Company</span>
+            <span>Company</span>
+            <span>Company</span>
         </div>
     </div>
 </section>
 
-
-<!-- Cta -->
+<!-- CTA -->
 <section id="get-started" class="cta">
-    <div class="section-inner">
-
+    <div class="container text-center">
         <h2>Bridge the Gap Between Learning & Employment</h2>
-
-        <a href="#" onclick="openModal('registerModal')" class="button hero-primary">
+        <br>
+        <a href="#" onclick="openModal('registerModal')"
+        class="btn btn-success btn-lg">
             Start Your Career Journey
         </a>
     </div>
 </section>
-
 {% endblock %}

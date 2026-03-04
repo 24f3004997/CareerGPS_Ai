@@ -15,8 +15,8 @@ main = Blueprint("main", __name__)
 # Landing Page, it should redirect to dashboard if the user is logged in
 @main.route("/")
 def landing():
-    if cur_usr.is_authenticated:
-        return redirect(url_for("main.dashboard"))
+    # if cur_usr.is_authenticated:
+    #     return redirect(url_for("main.dashboard"))
     return render_template("landing.html")
 
 # Dashboard page
@@ -86,9 +86,9 @@ def register():
     db.session.add(user)
     db.session.commit()
 
-    # Log the user in, redirect to dashbord
+    # Log the user in, disabled(redirect to dashbord) redirets to landing page now.
     login_user(user=user)
-    return redirect(url_for("main.dashboard"))
+    return redirect(url_for("main.landing"))
 
 # Login Pop-up Form
 @main.route("/signin", methods=["POST"])
@@ -100,10 +100,11 @@ def signin():
     # Select the user if present in DB, print a message otherwise
     user = User.query.filter_by(u_email=email).first()
 
-    # if user ad password match login and go to dashboard, else -> landing
+    # if user ad password match login and disabled(go to dashboard)  redirets to landing page now,
+    # # else -> landing
     if user and user.check_password(password):
         login_user(user=user)
-        return redirect(url_for("main.dashboard"))
+        return redirect(url_for("main.landing"))
     flash("Invalid Credentials.")
     return redirect(url_for("main.landing"))
 

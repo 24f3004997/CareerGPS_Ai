@@ -1,23 +1,51 @@
 {% extends "base.html" %}
-{% block content %}
+
 <div class="container">
-    <h2>Career Roadmap</h2>
-
-    <div class="card">
-        <h3>Month 1</h3>
-        SQL Basics
+    {% block content %}
+    <div class="container mt-4">
+        <h2 class="mb-3">Career Roadmap</h2>
+        <p class="text-muted">Target Role: Data Analyst</p>
+        <div class="roadmap-progress">
+            <p class="mb-1">Progress</p>
+            <div class="roadmap-progress-bar">
+                <div class="roadmap-progress-fill"></div>
+            </div>
+            <small class="text-muted">35% completed</small>
+        </div>
+        <div class="roadmap-timeline">
+            <div class="roadmap-step">
+                <div class="roadmap-card">
+                    <div class="d-flex justify-content-between">
+                        <h5>Month 1</h5>
+                        <span class="roadmap-status status-done">Completed</span>
+                    </div>
+                    <p class="text-muted mb-0">SQL Basics</p>
+                </div>
+            </div>
+            <div class="roadmap-step">
+                <div class="roadmap-card">
+                    <div class="d-flex justify-content-between">
+                        <h5>Month 2</h5>
+                        <span class="roadmap-status status-current">Current</span>
+                    </div>
+                    <p class="text-muted mb-0">Power BI Dashboard Projects</p>
+                </div>
+            </div>
+            <div class="roadmap-step pending">
+                <div class="roadmap-card">
+                    <div class="d-flex justify-content-between">
+                        <h5>Month 3</h5>
+                        <span class="roadmap-status status-upcoming">Upcoming</span>
+                    </div>
+                    <p class="text-muted mb-0">Advanced SQL & Optimization</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4">
+            <a href="{{ url_for('main.jobs') }}" class="btn btn-success">
+                View Recommended Jobs
+            </a>
+        </div>
     </div>
-
-    <div class="card">
-        <h3>Month 2</h3>
-        Power BI Projects
-    </div>
-
-    <div class="card">
-        <h3>Month 3</h3>
-        Advanced SQL
-    </div>
-
-    <a href="{{ url_for('main.jobs') }}" class="button">View Jobs</a>
+    {% endblock %}
 </div>
-{% endblock %}

@@ -1,43 +1,58 @@
 {% extends "base.html" %}
-{% block content %}
 <div class="container">
-    <h2>Profile</h2>
-    <div class="profile-grid">
-        <div class="card profile-card">
-            <h3>Account Information</h3>
-            <div class="info_row">
-                <span>Name</span> <strong>{{ current_user.u_name }}</strong>
-            </div>
-            <div class="info_row">
-                <span>Email</span> <strong>{{ current_user.u_email }}</strong>
-            </div>
-            <div class="info_row">
-                <span>Role</span> 
-                {% if current_user.u_role == "admin" %}
-                    <span class="badge admin-badge">Admin</span>
-                {% else %}
-                    <span class="badge user-badge">User</span>
-                {% endif %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Profile</h2>
+    <div class="row g-4">
+        <!-- Account Information -->
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Account Information</h5>
+                    <p class="mb-2">
+                        <strong>Name:</strong>
+                        {{ current_user.u_name }}
+                    </p>
+
+                    <p class="mb-2">
+                        <strong>Email:</strong>
+                        {{ current_user.u_email }}
+                    </p>
+
+                    <p class="mb-0">
+                        <strong>Role:</strong>
+                        {% if current_user.u_role == "admin" %}
+                            <span class="badge bg-primary">Admin</span>
+                        {% else %}
+                            <span class="badge bg-secondary">User</span>
+                        {% endif %}
+                    </p>
+                </div>
             </div>
         </div>
 
-        <div class="card profile-card">
-            <h3>Career Stats</h3>
-            <div class="stat-large">78%</div>
-            <p>Profile Score</p>
+        <!-- Career Stats -->
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-3">Career Stats</h5>
+                    <h1 class="text-success fw-bold">78%</h1>
+                    <p class="text-muted">Profile Score</p>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <h5>3</h5>
+                            <small class="text-muted">Applications</small>
+                        </div>
 
-            <div class="mini-stats">78%
-                <div>
-                    <strong>3</strong>
-                    <span>Applications</span>
-                </div>
-
-                <div>
-                    <strong>Intermediate</strong>
-                    <span>Skill Readiness</span>
+                        <div class="col">
+                            <h5>Intermediate</h5>
+                            <small class="text-muted">Skill Readiness</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 {% endblock %}
+</div>
