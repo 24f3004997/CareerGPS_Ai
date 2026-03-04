@@ -1,0 +1,32 @@
+#### Things to do:
+- In FrontEnd
+    - [ ] Add the Job Readiness score in the center of Job Readiness Score Circle @ Dashboard Overview
+    - [ ] Connect The Skills/ Jobs Dataset
+    - [ ] AI Language Overlay
+    - [ ] Text-to-speech Narration
+    - [ ] Voice Interaction
+    - [ ] Dark Mode (?)
+    - [ ] Make the Active Section Link Pop a bit more
+    - [ ] Work on Profile
+    - [ ] take variables for skills, jobs
+      job_readiness, milestones, roadmap, trending_jobs
+    - [ ] make the sidebar visible for all except profile, home
+    - [ ] make the sidebar collapsible
+    - [ ] make the navbar sticky
+    - [ ] make the navbar centralised and remove the extra ribbon.
+    - [ ] add arrow icon to back to home
+    - [ ] Split the name into First Middle and Last
+    - [ ] Take phone numbers, hash them
+    - [ ] Take area of interest
+    - [ ] Include a resume Builder?
+    - [ ] Work on color scheme and asthetics.
+    - [ ] make analyser and interview page
+    - [ ] make the wireframe of the current design
+    - [ ] simplyfy the code this is complicated mess
+    - [ ] Find the bugs.
+    - [ ] Resolve the bugs
+    - [ ] Add a ticket generation page to take reports from users for when they find bugs / when they flag something as inappropriate.
+    - [ ] Think of more
+
+- On The team communications
+    - [ ] get a list of fields needed for the forms from Vishwa and the others
