@@ -26,6 +26,7 @@
     - [ ] Find the bugs.
     - [ ] Resolve the bugs
     - [ ] Add a ticket generation page to take reports from users for when they find bugs / when they flag something as inappropriate.
+    - [ ] Add Admin Features to delete users/corporations approve/reject jobs/skills
     - [ ] Think of more
 
 - On The team communications
